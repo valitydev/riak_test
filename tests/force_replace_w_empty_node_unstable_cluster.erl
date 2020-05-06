@@ -40,24 +40,24 @@
 %%%
 %%% 8. Order 'leaving' node, well, to leave the cluster finally.
 %%%
-%%% 8. Give cluster some time (3 minutes by default) to stabilize.
+%%% 9. Give cluster some time (3 minutes by default) to stabilize.
 %%%
-%%% 9. Kill 'faulty' node, brutally, without a chance to say farewell to the
+%%% 10. Kill 'faulty' node, brutally, without a chance to say farewell to the
 %%% cluster.
 %%%
-%%% 10. Mark 'faulty' node as 'down' by hand.
+%%% 11. Mark 'faulty' node as 'down' by hand.
 %%%
-%%% 11. Wait for 'leaving' node to hand ownership off of all their partitions.
+%%% 12. Wait for 'leaving' node to hand ownership off of all their partitions.
 %%%
-%%% 12. Join and force-replace 'faulty' with one more node of 'current'
+%%% 13. Join and force-replace 'faulty' with one more node of 'current'
 %%% version.
 %%%
-%%% 13. Ensure that this new node will eventually take ownership of those
+%%% 14. Ensure that this new node will eventually take ownership of those
 %%% partitions previously owned by 'faulty'.
 %%%    To be honest we do not check that ownership is strictly the same, just
 %%%    waiting for several handoffs to this node to complete.
 %%%
-%%% 14. Stop the workers.
+%%% 15. Stop the workers.
 %%%    Ideally, we want workers to report no errors at all at the end of a test
 %%%    run. Few errors signifying partial unavailability are ok though.
 %%%
